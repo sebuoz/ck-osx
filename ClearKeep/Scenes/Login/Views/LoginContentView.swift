@@ -236,9 +236,9 @@ private extension LoginContentView {
 	func doLogin() {
 		self.isShowLoading = true
 		Task {
-            print("selim")
+
 			let loadable = await injected.interactors.loginInteractor.signIn(email: email.trimmingCharacters(in: .whitespacesAndNewlines), password: password, customServer: customServer)
-            print("loaded")
+ 
 			self.isShowLoading = false
 			switch loadable {
 			case .loaded(let data):
@@ -271,9 +271,9 @@ private extension LoginContentView {
 	func doSocialLogin(type: SocialType) {
 		self.isShowLoading = true
 		Task {
-            print("hilal")
+
 			let loadable = await injected.interactors.loginInteractor.signInSocial(type, customServer: customServer)
-            print("loaded2")
+   
 			self.isShowLoading = false
 			switch loadable {
 			case .loaded(let data):
